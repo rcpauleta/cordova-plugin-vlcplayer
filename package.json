@@ -1,0 +1,10 @@
+{
+  "name": "cordova-plugin-vlcplayer",
+  "version": "1.0.0",
+  "description": "VLC (LibVLC/MobileVLCKit) player bridge for Cordova/OutSystems",
+  "license": "MIT",
+  "cordova": {
+    "id": "cordova-plugin-vlcplayer",
+    "platforms": ["android", "ios"]
+  }
+}
