@@ -1,27 +1,22 @@
-<plugin id="cordova-plugin-vlcplayer" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
-  <name>VLCPlayer</name>
-  <js-module src="www/VLCPlayer.js" name="VLCPlayer">
-    <clobbers target="VLCPlayer"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-vlcplayer" version="0.1.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>VLC Player</name>
+  <js-module src="www/vlcplayer.js" name="VLCPlayer">
+    <clobbers target="cordova.plugins.vlcplayer" />
+    <clobbers target="window.plugins.vlcplayer" />
   </js-module>
 
-  <!-- ANDROID -->
-  <platform name="android">
-    <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.INTERNET" />
-      <uses-permission android:name="android.permission.WAKE_LOCK" />
-      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-      <application android:usesCleartextTraffic="true" />
-    </config-file>
-
-    <!-- LibVLC dependency -->
-    <framework src="org.videolan.android:libvlc-all:3.5.1" />
-    <source-file src="src/android/com/yourco/vlc/VLCPlayer.java" target-dir="src/com/yourco/vlc" />
-  </platform>
-
-  <!-- iOS -->
   <platform name="ios">
-    <!-- CocoaPods -->
-    <framework src="MobileVLCKit" type="podspec" spec="~> 3.6" />
-    <source-file src="src/ios/VLCPlayer.m" />
+    <!-- Pull libVLC for iOS -->
+    <framework src="MobileVLCKit" type="podspec" />
+    <!-- If you want to pin a version, use: <framework src="MobileVLCKit" spec="3.6.0" type="podspec" /> -->
+
+    <!-- Swift support (Cordova sets this for you in most MABS images, but safe to include): -->
+    <preference name="SwiftVersion" default="5.0" />
+
+    <source-file src="src/ios/VLCPlayer.swift" />
   </platform>
 </plugin>
