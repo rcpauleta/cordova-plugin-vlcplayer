@@ -1,10 +1,11 @@
 {
   "name": "cordova-plugin-vlcplayer",
-  "version": "1.0.0",
-  "description": "VLC (LibVLC/MobileVLCKit) player bridge for Cordova/OutSystems",
-  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Cordova VLC player (MobileVLCKit) for iOS",
   "cordova": {
     "id": "cordova-plugin-vlcplayer",
-    "platforms": ["android", "ios"]
-  }
+    "platforms": ["ios"]
+  },
+  "keywords": ["cordova","vlc","video","mkv","ios"],
+  "license": "LGPL-2.1-or-later"
 }
