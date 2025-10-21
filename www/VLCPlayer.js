@@ -1,39 +1,29 @@
 var exec = require('cordova/exec');
-var PLUGIN = 'VLCPlayer';
 
-exports.init = function (cb) {
-  exec(cb, cb, PLUGIN, 'init', []);
+exports.init = function (opts, ok, err) {
+  exec(ok, err, 'VLCPlayer', 'init', [opts || {}]);
 };
 
-exports.play = function (url, options, cb) {
-  exec(cb, cb, PLUGIN, 'play', [url, options || {}]);
+exports.play = function (url, opts, ok, err) {
+  exec(ok, err, 'VLCPlayer', 'play', [url, opts || {}]);
 };
 
-exports.pause = function (cb) {
-  exec(cb, cb, PLUGIN, 'pause', []);
+exports.pause = function (ok, err) {
+  exec(ok, err, 'VLCPlayer', 'pause', []);
 };
 
-exports.stop = function (cb) {
-  exec(cb, cb, PLUGIN, 'stop', []);
+exports.resume = function (ok, err) {
+  exec(ok, err, 'VLCPlayer', 'resume', []);
 };
 
-exports.seek = function (ms, cb) {
-  exec(cb, cb, PLUGIN, 'seek', [ms]);
+exports.seek = function (ms, ok, err) {
+  exec(ok, err, 'VLCPlayer', 'seek', [ms]); // seek to absolute ms
 };
 
-exports.setVolume = function (vol, cb) {
-  exec(cb, cb, PLUGIN, 'setVolume', [vol]); // 0..100
+exports.position = function (ok, err) {
+  exec(ok, err, 'VLCPlayer', 'position', []);
 };
 
-exports.snapshot = function (cb) {
-  exec(cb, cb, PLUGIN, 'snapshot', []);
-};
-
-exports.dispose = function (cb) {
-  exec(cb, cb, PLUGIN, 'dispose', []);
-};
-
-// event stream
-exports.setEventHandler = function (cb) {
-  exec(cb, cb, PLUGIN, 'setEventHandler', []);
+exports.stop = function (ok, err) {
+  exec(ok, err, 'VLCPlayer', 'stop', []);
 };
