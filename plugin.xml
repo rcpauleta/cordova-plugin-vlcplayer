@@ -19,7 +19,8 @@
         
           <!-- (Optional but harmless) Swift preference -->
           <preference name="SwiftVersion" default="5.0" />
-          <preference name="UseSwiftLanguageVersion" value="5.0" />
+          <preference name="UseLegacySwiftLanguageVersion" value="true" />
+          <preference name="UseSwiftLanguageVersion" value="5" />
         
           <source-file src="src/ios/VLCPlayer.swift" />
   </platform>
