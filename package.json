@@ -1,11 +1,8 @@
 {
-  "name": "cordova-plugin-vlcplayer-x",
-  "version": "0.1.4",
-  "description": "Cordova VLC player (MobileVLCKit) for iOS",
-  "cordova": {
-    "id": "cordova-plugin-vlcplayer-x",
-    "platforms": ["ios"]
-  },
-  "keywords": ["cordova","vlc","video","mkv","ios"],
+  "name": "cordova-plugin-vlcplayer-objc",
+  "version": "0.2.0",
+  "description": "VLC (MobileVLCKit) player for Cordova iOS (ObjC)",
+  "cordova": { "id": "cordova-plugin-vlcplayer-objc", "platforms": ["ios"] },
+  "keywords": ["cordova","vlc","mobilevlckit","video","mkv","ios"],
   "license": "LGPL-2.1-or-later"
 }
