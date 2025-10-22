@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="cordova-plugin-vlcplayer-rcp" version="0.1.3"
-        xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        version="0.1.0">
+        xmlns="http://apache.org/cordova/ns/plugins/1.0">
 
   <name>VLC Player</name>
   <description>This plugin allows you to launch fullscreen streaming player using VLC</description>
