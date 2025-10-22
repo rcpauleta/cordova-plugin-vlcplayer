@@ -1,53 +1,39 @@
 "use strict";
-function VLCPlayer() {
-}
 
-VLCPlayer.prototype.init = function(options) {
-  options = options || {};
-  cordova.exec(options.successCallback || null, options.errorCallback || null,
-               "VLCPlayer", "init", [options]);
+var exec = require("cordova/exec");
+
+function VLCPlayer() {}
+
+// opts object is optional in all methods
+
+VLCPlayer.prototype.init = function (opts, success, error) {
+  exec(success || null, error || null, "VLCPlayer", "init", [opts || {}]);
 };
 
-VLCPlayer.prototype.play = function (url, options) {
-  options = options || {};
-  cordova.exec(options.successCallback || null, options.errorCallback || null,
-               "VLCPlayer", "play", [url, options]);
+VLCPlayer.prototype.play = function (url, opts, success, error) {
+  exec(success || null, error || null, "VLCPlayer", "play", [url, opts || {}]);
 };
 
-VLCPlayer.prototype.pause = function(options) {
-  options = options || {};
-  cordova.exec(options.successCallback || null, options.errorCallback || null,
-               "VLCPlayer", "pause", [options]);
+VLCPlayer.prototype.pause = function (opts, success, error) {
+  exec(success || null, error || null, "VLCPlayer", "pause", [opts || {}]);
 };
 
-VLCPlayer.prototype.resume = function(options) {
-  options = options || {};
-  cordova.exec(options.successCallback || null, options.errorCallback || null,
-               "VLCPlayer", "resume", [options]);
+VLCPlayer.prototype.resume = function (opts, success, error) {
+  exec(success || null, error || null, "VLCPlayer", "resume", [opts || {}]);
 };
 
-VLCPlayer.prototype.seek = function(mseconds, options) {
-  options = options || {};
-  cordova.exec(options.successCallback || null, options.errorCallback || null,
-               "VLCPlayer", "seek", [mseconds, options]);
+VLCPlayer.prototype.seek = function (mseconds, opts, success, error) {
+  exec(success || null, error || null, "VLCPlayer", "seek", [mseconds, opts || {}]);
 };
 
-VLCPlayer.prototype.position = function() {
-  options = {};
-  cordova.exec(options.successCallback || null, options.errorCallback || null,
-               "VLCPlayer", "position", [options]);
+// Returns { time: <ms>, length: <ms> } to success callback
+VLCPlayer.prototype.position = function (success, error) {
+  exec(success || null, error || null, "VLCPlayer", "position", [{}]);
 };
 
-VLCPlayer.prototype.stop = function() {
-  options = {};
-  cordova.exec(options.successCallback || null, options.errorCallback || null,
-               "VLCPlayer", "stop", [options]);
+VLCPlayer.prototype.stop = function (success, error) {
+  exec(success || null, error || null, "VLCPlayer", "stop", [{}]);
 };
 
-VLCPlayer.install = function () {
-	if (!window.plugins) {
-		window.plugins = {};
-	}
-	window.plugins.vlcPlayer = new VLCPlayer();
-	return window.plugins.vlcPlayer;
-};
+// Export a singleton; plugin.xml will clobber it to cordova.plugins.vlcplayer
+module.exports = new VLCPlayer();
