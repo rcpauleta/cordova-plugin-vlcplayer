@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="cordova-plugin-vlcplayer" version="0.1.0"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        version="0.1.0">
 
   <name>VLC Player</name>
+  <description>This plugin allows you to launch fullscreen streaming player using VLC</description>
+        
   <js-module src="www/vlcplayer.js" name="VLCPlayer">
-    <clobbers target="cordova.plugins.vlcplayer" />
-    <clobbers target="window.plugins.vlcplayer" />
+    <clobbers target="vlcplayer" />
   </js-module>
 
   <platform name="ios">
-  <!-- CocoaPods under <podspec> -->
-  <podspec>
-    <pods use-frameworks="true">
-      <!-- Pin to a stable MobileVLCKit. If build complains, try 3.6.0 or remove spec to get latest compatible -->
-      <pod name="MobileVLCKit" spec="3.6.0"/>
-    </pods>
-  </podspec>
-
-  <!-- (Optional but harmless) Swift preference -->
-  <preference name="SwiftVersion" default="5.0" />
-  <preference name="UseSwiftLanguageVersion" value="5.0" />
-
-  <source-file src="src/ios/VLCPlayer.swift" />
-</platform>
+          <podspec>
+            <pods use-frameworks="true">
+              <pod name="MobileVLCKit" spec="3.6.0"/>
+            </pods>
+          </podspec>
+        
+          <!-- (Optional but harmless) Swift preference -->
+          <preference name="SwiftVersion" default="5.0" />
+          <preference name="UseSwiftLanguageVersion" value="5.0" />
+        
+          <source-file src="src/ios/VLCPlayer.swift" />
+  </platform>
 </plugin>
