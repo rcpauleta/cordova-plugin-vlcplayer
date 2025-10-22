@@ -8,12 +8,9 @@
     <clobbers target="window.plugins.vlcplayer" />
   </js-module>
 
-  <platform name="ios">
-  <podspec>
-    <pods use-frameworks="dynamic">
-      <pod name="MobileVLCKit" spec="3.6.0"/>
-    </pods>
-  </podspec>
+<js-module src="www/VLCPlayer.js" name="VLCPlayer">
+        <clobbers target="VLCPlayer" />
+    </js-module>
 
   <header-file src="src/ios/VLCPlayer.h" />
   <source-file src="src/ios/VLCPlayer.m" compiler-flags="-fobjc-arc" />
