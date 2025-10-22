@@ -9,16 +9,13 @@
   </js-module>
 
   <platform name="ios">
-    <!-- CocoaPods: MABS 10+ requires using <podspec> -->
-    <podspec>
-      <pods use-frameworks="true">
-        <!-- Pin if needed; you can also omit spec to let CocoaPods resolve -->
-        <pod name="MobileVLCKit" spec="3.6.0"/>
-      </pods>
-    </podspec>
+  <podspec>
+    <pods use-frameworks="dynamic">
+      <pod name="MobileVLCKit" spec="3.6.0"/>
+    </pods>
+  </podspec>
 
-    <!-- No Swift prefs at all -->
-    <header-file src="src/ios/VLCPlayer.h" />
-    <source-file src="src/ios/VLCPlayer.m" />
-  </platform>
+  <header-file src="src/ios/VLCPlayer.h" />
+  <source-file src="src/ios/VLCPlayer.m" compiler-flags="-fobjc-arc" />
+</platform>
 </plugin>
