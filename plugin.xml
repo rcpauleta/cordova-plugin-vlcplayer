@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="cordova-plugin-vlcplayer-x" version="0.1.4"
+<plugin id="cordova-plugin-vlcplayer-objc" version="0.2.0"
         xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>VLC Player (ObjC)</name>
 
-  <name>VLC Player</name>
-  <description>This plugin allows you to launch fullscreen streaming player using VLC</description>
-        
   <js-module src="www/vlcplayer.js" name="VLCPlayer">
-    <clobbers target="vlcplayer" />
+    <clobbers target="cordova.plugins.vlcplayer" />
+    <clobbers target="window.plugins.vlcplayer" />
   </js-module>
 
   <platform name="ios">
-          <podspec>
-            <pods use-frameworks="true">
-              <pod name="MobileVLCKit" spec="3.6.0"/>
-            </pods>
-          </podspec>
+    <!-- CocoaPods: MABS 10+ requires using <podspec> -->
+    <podspec>
+      <pods use-frameworks="true">
+        <!-- Pin if needed; you can also omit spec to let CocoaPods resolve -->
+        <pod name="MobileVLCKit" spec="3.6.0"/>
+      </pods>
+    </podspec>
 
-          <!-- (Optional but harmless) Swift preference -->
-          <preference name="SwiftVersion" default="5.0" />
-          <preference name="UseSwiftLanguageVersion" value="5.0" />
-        
-          <source-file src="src/ios/VLCPlayer.swift" />
+    <!-- No Swift prefs at all -->
+    <header-file src="src/ios/VLCPlayer.h" />
+    <source-file src="src/ios/VLCPlayer.m" />
   </platform>
 </plugin>
